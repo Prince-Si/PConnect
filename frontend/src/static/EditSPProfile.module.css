@@ -1,0 +1,59 @@
+/* UserForm.css */
+
+/* Container for the entire form */
+.userformcontainer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    overflow-y: 'auto';
+
+  }
+  
+  /* Form styling */
+  .userform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formgroup {
+    margin-bottom: 15px;
+  }
+  
+  .label1 {
+    font-weight: bold;
+  }
+  
+  /* Input field styling */
+  .formcontrol {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Submit button styling */
+  .submitbutton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Close button styling */
+  .closebutton {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Add more styles as needed */
+  

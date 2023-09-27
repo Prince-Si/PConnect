@@ -1,0 +1,14 @@
+.App {
+    background-color:rgb(158, 215, 183, 0.7);
+    border-radius:20px;
+    padding:20px;
+    /*background-opacity:70%;*/
+  
+
+
+  }
+  
+.instruction{
+  color:red;
+}
+

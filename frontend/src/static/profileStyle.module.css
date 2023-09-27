@@ -1,0 +1,144 @@
+/* Apply styles to the profile section container */
+.profileBody{
+  padding-left:80px;
+  padding-right:80px;
+}
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .flexContainer {
+    display: flex;
+    background: linear-gradient(to right, #f1f0e8, #f0f0ef);
+    gap: 30px;
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  /* Style the profile image */
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #007bff; /* Simplify border styling */
+    object-fit: cover;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+  
+  .userData {
+    color: red;
+    text-align: center;
+    flex-grow: 2;
+    flex-basis: 0;
+    align-items: center;
+    justify-content: center; /* Center horizontally within .userData */
+  }
+  
+  
+  /* Style the headings */
+  h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 20px;
+    color: #555;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  /* Style the user data section */
+  .user-data {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #666;
+  }
+  
+  /* Style the buttons */
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the details sections */
+  .details {
+    margin-top: 20px;
+  }
+  
+  .details-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Add more styles as needed */
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 10px;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  /* Add this to your profileStyles.module.css file */
+
+/* Style the education details section */
+.details {
+  margin-top: 20px;
+}
+
+.details h2 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  border-bottom: 2px solid #007bff; /* Add a blue border */
+  padding-bottom: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0; /* Add spacing between paragraphs */
+}
+
+/* Style the HR element */
+.details hr {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+/* Style the EduCertificateUpload component */
+.EduCertificateUpload {
+  margin-top: 10px;
+}
+
+/* Add hover effect to paragraphs */
+.details p:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Add transition effect */
+.details p {
+  transition: color 0.3s ease-in-out;
+}

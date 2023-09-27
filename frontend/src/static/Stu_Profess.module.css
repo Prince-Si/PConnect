@@ -1,0 +1,22 @@
+.flexcontainer {
+    display: flex;
+    background: linear-gradient(to right, #f1f0e8, #f0f0ef);
+    gap: 30px;
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  /* Style the profile image */
+  .first {
+    object-fit: cover;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+  
+  .second{
+    color: red;
+    text-align: center;
+    flex-grow: 2;
+    flex-basis: 0;
+    align-items: center;
+    justify-content: center; /* Center horizontally within .userData */
+  }
