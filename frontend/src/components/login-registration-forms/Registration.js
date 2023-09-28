@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../static/login-registration.css';
 import RegistrationStatus from './RegistrationStatus';
+import Logo from '../Logo';
+import {Link,useNavigate} from 'react-router-dom';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +27,16 @@ const Registration = () => {
   const [usernameAvailable, setUsernameAvailable] = useState(true);
   const [emailAvailable, setEmailAvailable] = useState(true);
   const [registrationStatus, setRegistrationStatus] = useState(null);
+  const loginform = useNavigate();
+  const registrationform = useNavigate();
+
+  const NavigateToLogin = () => {
+    loginform('/login-form');
+  };
+
+  const NavigateToRegistration = () => {
+    registrationform('/registration-form');
+  };
 
 
   useEffect(() => {
@@ -116,6 +128,19 @@ const Registration = () => {
 
   return (
     <div className="App">
+      <nav className="navbar">
+        <div className="navbar-content">
+          <Logo />
+          <div className="auth-links">
+            <Link className="nav-link" to="/login-form" onClick={NavigateToLogin}>
+              Login
+            </Link>
+            <Link className="nav-link" to="/registration-form" onClick={NavigateToRegistration}>
+              Register
+            </Link>
+          </div>
+        </div>
+      </nav>
       <h2>Registration</h2>
       <form onSubmit={handleSubmit}>
         <div>

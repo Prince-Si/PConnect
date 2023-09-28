@@ -1,9 +1,13 @@
+// Home.js
+
 import React, { useState } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Registration from './login-registration-forms/Registration';
 import Login from './login-registration-forms/Login';
-import '../static/home.css';
+import '../static/home.css'; // Import your custom CSS file
+import Logo from '../components/Logo';
+import RandomProfile from './Profiles/RandomProfiles';
 
 function Home() {
   const loginform = useNavigate();
@@ -32,45 +36,37 @@ function Home() {
 
   return (
     <div>
-       <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/MongoDBTest">MongoDBTest</Link>
-            </li>
-          </ul>
-        </nav>
-      <h1>This is Home page</h1>
-      <button onClick={NavigateToLogin}>Login</button>
-      <button onClick={NavigateToRegistration}>Register</button>
-      <button onClick={toggleRegistrationForm}>
-        {showRegistration ? 'Hide Registration' : 'Register'}
-      </button>
-      <div className="LRForm">
-        {showRegistration && <Registration />}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <Logo />
+          <div className="auth-links">
+            <Link className="nav-link" to="/login-form" onClick={NavigateToLogin}>
+              Login
+            </Link>
+            <Link className="nav-link" to="/registration-form" onClick={NavigateToRegistration}>
+              Register
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <div className='hflexB'>
+      <div className="homepage-content">
+        <h1>Welcome to PConnect</h1>
+        <p>
+          PConnect is a revolutionary platform designed to empower undergraduate students by bridging the gap between academia and the professional world. Our core objectives include facilitating networking with industry professionals, providing exposure to real-world industries, and offering a wide range of educational resources to help you succeed in your career journey.
+        </p>
+        <p>
+          Join our community today to connect with professionals, explore industries, and access valuable resources that will set you on the path to success.
+        </p>
+        <div className="action-buttons">
+          <button onClick={NavigateToLogin}>Login</button><br></br><br></br>
+          <button onClick={NavigateToRegistration}>Register</button>
+        </div>
       </div>
-      <button onClick={toggleLoginForm}>
-        {showLogin ? 'Hide Login' : 'Login'}
-      </button>
-      <div className="LRForm">
-        {showLogin && <Login />}
+      <div className='RProfiles'>
+      <RandomProfile />
       </div>
-      <p>lorem100alsiudhfwliauerhwauierholiauwehrdijsdfihsdjf;alskdjfijf
-        a;lsiedhfowieurfowiaejroijdsf;aishf;ilisjkdf;lkj
-        a;oseihdfoiweurowieuuroiweuroiwejjroiweuuroiweuroiweuroi
-        ;aosiehdfrowieurowieuru;owiejr;oiejf
-        a;sleidjfrowieurwoierowierwoieru
-        a;osiejrowieuroiwerowieroi
-        djfpawoeirkdjf;oi
-      </p>
+      </div>
     </div>
   );
 }

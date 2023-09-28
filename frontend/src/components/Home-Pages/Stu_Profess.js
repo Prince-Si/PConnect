@@ -5,6 +5,7 @@ import styles from '../../static/navbar1.module.css';
 import RandomProfile from '../Profiles/RandomProfiles';
 import SearchProfiles from './SearchProfiles';
 import StuStyles from '../../static/Stu_Profess.module.css';
+import Logo from '..//Logo';
 
 
 function Stu_Profess(){
@@ -15,15 +16,14 @@ function Stu_Profess(){
       return <h1>log in first</h1>
     }
     return(
-        <>
+        <div style={{marginLeft:'90px', marginRight:'90px'}}>
              <nav className={styles.nav1}>
+              <Logo/>
       <ul className={styles.ul1}>
         <li className={styles.li1}>
           <Link className={styles.a1} to="/Stu_ProfessHome">Home</Link>
         </li>
-        <li  className={styles.li1}>
-          <Link className={styles.a1} to="/about">About</Link>
-        </li>
+        
         <li  className={styles.li1}>
           <Link className={styles.a1} to="/Stu_ProfessHome/StuProfessProfile">Profile</Link>
         </li>
@@ -54,7 +54,7 @@ function Stu_Profess(){
           </div>
 
             
-        </>
+        </div>
     )
 }
 

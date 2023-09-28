@@ -1,7 +1,95 @@
-.LRForm {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
+/* home.css */
+
+/* Customize the logo style */
+.logo {
+  font-family: 'YourFont', sans-serif; /* Use your preferred font-family */
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff; /* Your brand color */
+}
+
+/* Style the navigation bar */
+.navbar {
+  background: linear-gradient(to right, #f4b404, #f4f6dd, rgb(238, 219, 6)); /* Gradient background */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for the navbar */
+  padding: 10px 0; /* Add padding to the navbar */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Add horizontal padding to the content */
+}
+
+/* Style the navigation links */
+.auth-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #333; /* Text color for links */
+  font-size: 16px; /* Font size for links */
+  margin-left: 20px; /* Add space between menu items */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.2s; /* Smooth color transition on hover */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Additional styles for the homepage content as needed */
+
+
+/* home.css */
+
+/* ... (previously defined styles) */
+.hflexB{
+  display:flex;
+}
+
+.homepage-content {
+  padding: 20px;
+  text-align: center;
+  flex-basis:1
+}
+
+.RProfiles{
+  flex-basis: 2;
+}
+
+.homepage-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Heading text color */
+}
+
+.homepage-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #555; /* Paragraph text color */
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #031b48, #4457b5, rgb(229, 226, 232)); /* Gradient background */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background: linear-gradient(to right, #1a0348, #7230c1, rgb(197, 133, 250)); /* Gradient background */
+}

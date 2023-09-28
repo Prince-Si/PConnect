@@ -1,17 +1,27 @@
 // src/App.js
 
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../../static/login-registration.css';
 import { setSession, clearSession } from '../../SessionManager';
+import Logo from '../Logo';
 
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState(null);
+  const loginform = useNavigate();
+  const registrationform = useNavigate();
 
   const navigate = useNavigate(); // Use useNavigate for navigation
+  const NavigateToLogin = () => {
+    loginform('/login-form');
+  };
+
+  const NavigateToRegistration = () => {
+    registrationform('/registration-form');
+  };
 
   const handleLogin = async () => {
     try {
@@ -54,7 +64,22 @@ function Login() {
  
 
   return (
-    <div className="App">
+    <div className="App"
+    style={{padding:'50px', margin:"100px",marginLeft:'300px', marginRight:'300px'}}
+    >
+      <nav className="navbar">
+        <div className="navbar-content">
+          <Logo />
+          <div className="auth-links">
+            <Link className="nav-link" to="/login-form" onClick={NavigateToLogin}>
+              Login
+            </Link>
+            <Link className="nav-link" to="/registration-form" onClick={NavigateToRegistration}>
+              Register
+            </Link>
+          </div>
+        </div>
+      </nav>
       <h1>Login</h1>
       {loginStatus === 'success' && <p>Login successful!</p>}
       {loginStatus === 'error' && <p>Login failed. Please check your credentials.</p>}

@@ -9,7 +9,7 @@
     width: 400px;
     height: 400px;
     margin: 0 auto;
-    overflow-y: 'auto';
+    overflow-y:scroll;
 
   }
   
@@ -47,7 +47,7 @@
   
   /* Close button styling */
   .closebutton {
-    background-color: #ccc;
+    background-color: #ed0d0d;
     color: #fff;
     border: none;
     border-radius: 3px;

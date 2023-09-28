@@ -1,5 +1,5 @@
 // src/components/UserForm.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'; // Import Axios
 import { getSession } from '../../SessionManager';
 
@@ -37,6 +37,7 @@ const UserForm = ({ onClose }) => {
 
   // Use another piece of state to track whether user data is loaded or not
   const [userDataLoaded, setUserDataLoaded] = useState(false);
+  const userFormRef = useRef(null);
 
  
   useEffect(() => {
@@ -87,9 +88,18 @@ const UserForm = ({ onClose }) => {
       console.error('Error:', error);
     }
   };
+
+  const handleClickOutside = (e) => {
+    if (userFormRef.current && !userFormRef.current.contains(e.target)) {
+      onClose();
+    }
+  };
   // Render the form only when user data is loaded
   return (
-    <div className={styles.userformcontainer}>
+    <div className={styles.userformcontainer} ref={userFormRef}>
+      <button className={styles.closebutton} onClick={onClose} style={{position:'absolute'}}>
+        Close
+      </button>
       <h2>User Information</h2>
       {userDataLoaded && (
         <form onSubmit={handleSubmit} className={styles.userform}>
@@ -262,9 +272,7 @@ const UserForm = ({ onClose }) => {
           </button>
         </form>
       )}
-      <button className={styles.closebutton} onClick={onClose}>
-        Close
-      </button>
+      
 
 
       <EducationForm/>

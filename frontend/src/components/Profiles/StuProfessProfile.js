@@ -8,6 +8,7 @@ import ProfileImage from './ProfileImage';
 import EduCertificateUpload from './EduCertificateUpload';
 import InternCertificateUpload from './InternCertificateUpload';
 import profileStyles from '../../static/profileStyle.module.css';
+import Logout from '../login-registration-forms/logoutButton';
 
 function StuProfessProfiles() {
   const session = getSession();
@@ -180,11 +181,7 @@ function StuProfessProfiles() {
               Home
             </Link>
           </li>
-          <li className={styles.li1}>
-            <Link className={styles.a1} to="/about">
-              About
-            </Link>
-          </li>
+          
           <li className={styles.li1}>
             <Link
               className={styles.a1}
@@ -200,6 +197,12 @@ function StuProfessProfiles() {
             >
               Edit Profile
             </button>
+          </li>
+
+          <li className={styles.li1}>
+            
+              <Logout />
+           
           </li>
         </ul>
       </nav>

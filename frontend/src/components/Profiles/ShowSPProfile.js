@@ -4,6 +4,7 @@ import { getSession } from '../../SessionManager';
 import styles from '../../static/navbar1.module.css';
 import axios from 'axios';
 import profileStyles from '../../static/profileStyle.module.css';
+import HandleLogOut from '../login-registration-forms/logoutButton';
 
 
 function ShowSPProfile({}) {
@@ -156,6 +157,22 @@ function ShowSPProfile({}) {
 
   return (
     <div className={profileStyles.profileBody}>
+      <nav className={styles.nav1}>
+      <ul className={styles.ul1}>
+        <li className={styles.li1}>
+          <Link className={styles.a1} to="/Stu_ProfessHome">Home</Link>
+        </li>
+        
+        <li  className={styles.li1}>
+          <Link className={styles.a1} to="/Stu_ProfessHome/StuProfessProfile">Profile</Link>
+        </li>
+        <li>
+        <HandleLogOut />
+        </li>
+        
+      </ul>
+     
+    </nav>
       <br></br>
 
       <div className={profileStyles.profileContainer}>
