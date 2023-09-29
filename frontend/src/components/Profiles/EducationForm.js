@@ -16,7 +16,6 @@ function EducationForm() {
     yearOfPassing: '',
     percentage: '',
     description: '',
-    // You can add more fields as needed
   });
 
   const [isLevelChanged, setIsLevelChanged] = useState(false);
