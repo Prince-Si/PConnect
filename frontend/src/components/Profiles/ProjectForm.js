@@ -15,7 +15,6 @@ function ProjectForm() {
     technologies: '',
     Duration: '',
     githubLink: '',
-    // You can add more fields as needed
   });
 
   const [isExperienceTypeChanged, setIsExperienceTypeChanged] = useState(false);

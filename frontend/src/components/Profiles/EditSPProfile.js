@@ -1,6 +1,6 @@
 // src/components/UserForm.js
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import { getSession } from '../../SessionManager';
 
 import styles from '../../static/EditSPProfile.module.css';
@@ -29,19 +29,15 @@ const UserForm = ({ onClose }) => {
   const session = getSession();
   console.log(session.data.email);
   const queryParams = {
-    // Add your query parameters here
-    // For example:
-    Email: session.data.email, // Replace with the actual user ID you want to reference
-    // Other parameters...
+   
+    Email: session.data.email, 
+    
   };
-
-  // Use another piece of state to track whether user data is loaded or not
   const [userDataLoaded, setUserDataLoaded] = useState(false);
   const userFormRef = useRef(null);
 
  
   useEffect(() => {
-    // Fetch user data when the component mounts using Axios
     axios
       .get('http://192.168.0.106:5000/profilert/StuProfessProfileGet',{
         params: queryParams,
@@ -49,7 +45,6 @@ const UserForm = ({ onClose }) => {
       .then((response) => {
         const data = response.data;
         if (data) {
-          // If user data is available, populate the form fields
           setFormData(data);
           setUserDataLoaded(true);
         } else {
@@ -63,7 +58,6 @@ const UserForm = ({ onClose }) => {
   }, []);
 
   if (!session) {
-    // Redirect to the login page or handle unauthorized access
     return <h1>log in first</h1>
   }
   const handleChange = (e) => {
@@ -94,7 +88,6 @@ const UserForm = ({ onClose }) => {
       onClose();
     }
   };
-  // Render the form only when user data is loaded
   return (
     <div className={styles.userformcontainer} ref={userFormRef}>
       <button className={styles.closebutton} onClick={onClose} style={{position:'absolute'}}>

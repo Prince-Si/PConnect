@@ -15,7 +15,6 @@ function ExperienceForm() {
     positionOfWork: '',
     Duration: '',
     description: '',
-    // You can add more fields as needed
   });
 
   const [isExperienceTypeChanged, setIsExperienceTypeChanged] = useState(false);

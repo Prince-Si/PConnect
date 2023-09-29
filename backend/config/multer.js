@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer'); // Install multer if you haven't already
+const multer = require('multer'); 
 const path = require('path');
 const fs = require('fs');
 
-// Define storage for uploaded images
+// Defining storage for uploaded images
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const uploadDir = './uploads/'; // Specify your upload directory
+    const uploadDir = './uploads/'; 
     fs.mkdirSync(uploadDir, { recursive: true });
     callback(null, uploadDir);
   },
@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 
 const eduCertificatesStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const uploadDir = './uploads/EduCertificates/'; // Specify your upload directory
+    const uploadDir = './uploads/EduCertificates/';
     fs.mkdirSync(uploadDir, { recursive: true });
     callback(null, uploadDir);
   },
@@ -34,7 +34,7 @@ const eduCertificatesStorage = multer.diskStorage({
 
 const internCertificatesStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const uploadDir = './uploads/InternCertificates/'; // Specify your upload directory
+    const uploadDir = './uploads/InternCertificates/'; 
     fs.mkdirSync(uploadDir, { recursive: true });
     callback(null, uploadDir);
   },

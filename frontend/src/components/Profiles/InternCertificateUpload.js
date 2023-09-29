@@ -27,11 +27,9 @@ function InternCertificateUpload({ email,experienceType,organisation,positionOfW
         .post('http://192.168.0.106:5000/profilert/InternCertificateImageUpload', formData)
         .then((response) => {
             console.log('Image uploaded successfully');
-          // Handle success, e.g., show a success message
         })
         .catch((error) => {
             console.error('Error uploading image:', error);
-          // Handle error, e.g., show an error message
         });
     }
   };

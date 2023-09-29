@@ -1,4 +1,4 @@
-const mysql = require('mysql2'); // Use the mysql2 package
+const mysql = require('mysql2'); 
 
 
 const db = mysql.createConnection({
@@ -37,12 +37,3 @@ const db = mysql.createConnection({
 
 module.exports = db;
 
-/*
-CREATE TABLE accounts (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  mobile_no VARCHAR(20) NOT NULL
-);
-*/

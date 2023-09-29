@@ -12,7 +12,6 @@ router.get('/api/check-email/:email', showdataController.email_availability);
 
 router.post('/items', itemController.createItem);
 
-// Get all items
 router.get('/items', itemController.getItems);
 
 

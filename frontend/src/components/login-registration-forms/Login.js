@@ -14,7 +14,7 @@ function Login() {
   const loginform = useNavigate();
   const registrationform = useNavigate();
 
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  const navigate = useNavigate(); 
   const NavigateToLogin = () => {
     loginform('/login-form');
   };
@@ -25,7 +25,6 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      //const response = await fetch('http://localhost:5000/api/login', {
         const response = await fetch('http://192.168.0.106:5000/api/login', {
         method: 'POST',
         headers: {
@@ -38,12 +37,9 @@ function Login() {
         setLoginStatus('success');
         const data = await response.json();
         console.log(data.usertype);
-         // Set the session data in the context
         setSession({ data });
         
-        // After successful login, set a session-related cookie
         if (data.route === '/about' && data.usertype==='admin') {
-          // Use navigate to change the route
           navigate('/about');
         }
         else if(data.route ==='/about' && data.usertype==='organisation'){

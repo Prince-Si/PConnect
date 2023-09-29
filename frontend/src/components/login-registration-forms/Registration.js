@@ -40,7 +40,6 @@ const Registration = () => {
 
 
   useEffect(() => {
-    // Real-time username availability check
     const checkUsernameAvailability = async () => {
       try {
         const response = await axios.get(`http://192.168.0.106:5000/api/check-username/${formData.username}`);
@@ -50,7 +49,6 @@ const Registration = () => {
       }
     };
 
-    // Real-time email availability check
     const checkEmailAvailability = async () => {
       try {
         const response = await axios.get(`http://192.168.0.106:5000/api/check-email/${formData.email}`);
@@ -60,12 +58,10 @@ const Registration = () => {
       }
     };
 
-    // Check username availability only if there is a valid username
     if (formData.username) {
       checkUsernameAvailability();
     }
 
-    // Check email availability only if there is a valid email
     if (formData.email) {
       checkEmailAvailability();
     }
@@ -81,17 +77,14 @@ const Registration = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Basic form validation
     const newErrors = {};
     if (!formData.username) {
       newErrors.username = 'Username is required';
     } else if (!usernameAvailable) {
-      //newErrors.username = 'Username is already taken';
     }
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!emailAvailable) {
-      //newErrors.email = 'Email is already registered';
     }
     if (!formData.password) {
       newErrors.password = 'Password is required';
@@ -106,13 +99,11 @@ const Registration = () => {
       setErrors(newErrors);
     } else {
       try {
-        // Send registration data to the backend
         const response = await axios.post('http://192.168.0.106:5000/api/register', formData);
-        // Check if registration was successful based on the response from the backend
         if (response.status === 200 && response.data.message === 'Registration successful') {
-          setRegistrationStatus('success'); // Set registration status to 'success'
+          setRegistrationStatus('success'); 
         } else {
-          setRegistrationStatus('error'); // Set registration status to 'error' if registration failed
+          setRegistrationStatus('error'); 
         }
         console.log('Registration successful:', response.data.message);
       } catch (error) {
@@ -121,7 +112,6 @@ const Registration = () => {
     }
   };
 
-   // Function to close the popup message
    const closePopup = () => {
     setRegistrationStatus(null);
   };
@@ -202,8 +192,8 @@ const Registration = () => {
         <div>
           <label>Select User Type:</label>
           <select
-            name="usertype" // Set the name attribute to match your formData
-            value={formData.usertype} // Bind the selected value to your formData
+            name="usertype" 
+            value={formData.usertype} 
             onChange={handleInputChange}
           >
             <option value="">Select...</option>
@@ -211,7 +201,7 @@ const Registration = () => {
             <option value="professional">Professional</option>
             <option value="admin">Admin</option>
             <option value="organisation">Organisation</option>
-            {/* Add more user types as needed */}
+           
           </select>
           <p className="error">{errors.usertype}</p>
         </div>

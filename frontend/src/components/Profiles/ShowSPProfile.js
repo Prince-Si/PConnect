@@ -145,7 +145,6 @@ function ShowSPProfile({}) {
       });
   }, [queryParams.Email]);
 
-  // Similar useEffect blocks for internData and projectData
 
   if (!session) {
     return <h1>Log in first</h1>;
@@ -222,7 +221,7 @@ function ShowSPProfile({}) {
       </div>
     ))
   ) : (
-    <></>//<p>No education data available</p>
+    <></>
   )}
 </div>
 )}
@@ -247,7 +246,7 @@ function ShowSPProfile({}) {
       </div>
     ))
   ) : (
-    <></>//<p>No intern data available</p>
+    <></>
   )}
 </div>
 )}

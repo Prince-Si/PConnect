@@ -9,7 +9,6 @@ const SearchProfiles = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
 
   useEffect(() => {
-    // Function to fetch search results based on the query
     const fetchResults = async () => {
       try {
         const response = await axios.get(`http://192.168.0.106:5000/profilert/searchProfiles?query=${query}`);
@@ -19,7 +18,6 @@ const SearchProfiles = () => {
       }
     };
 
-    // Fetch results when the query changes
     if (query) {
       fetchResults();
     } else {

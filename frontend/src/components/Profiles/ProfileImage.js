@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from '../../static/ProfileImage.module.css'; // Import the CSS module
+import styles from '../../static/ProfileImage.module.css';
 import { getSession } from '../../SessionManager';
 
 
 function ProfileImage({ onClose }) {
   const [image, setImage] = useState(null);
-  const [imageName, setImageName] = useState(''); // State to store the selected image's name
+  const [imageName, setImageName] = useState(''); 
   const session = getSession();
   console.log(session.data.email);
   const queryParams = {
-    // Add your query parameters here
-    // For example:
-    Email: session.data.email, // Replace with the actual user ID you want to reference
-    // Other parameters...
+   
+    Email: session.data.email,
   };
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImage(selectedImage);
 
-    // Set the selected image's name
     setImageName(selectedImage.name);
   };
 
@@ -33,18 +30,16 @@ function ProfileImage({ onClose }) {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
-      params: queryParams, // Pass the query parameters here
+      params: queryParams, 
     });
 
       console.log('Image uploaded successfully');
-      // You can also update the user's profile data in the database if needed
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
 
   const handleImageNameClick = () => {
-    // If an image is selected, open a new window/tab to preview the image
     if (image) {
       const imageUrl = URL.createObjectURL(image);
       window.open(imageUrl, '_blank');
@@ -57,7 +52,7 @@ function ProfileImage({ onClose }) {
         <h2>Upload Profile Image</h2>
         <input
           type="file"
-          id="profileInput" // Add the id attribute here
+          id="profileInput" 
           accept="image/*"
           onChange={handleImageChange}
         />

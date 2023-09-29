@@ -7,7 +7,6 @@ function AdminHome(){
     const session = getSession();
 
     if (!session) {
-      // Redirect to the login page or handle unauthorized access
       return <h1>log in first</h1>
     }
     if (session.data.usertype!=='admin'){

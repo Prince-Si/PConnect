@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Registration from './login-registration-forms/Registration';
 import Login from './login-registration-forms/Login';
-import '../static/home.css'; // Import your custom CSS file
+import '../static/home.css'; 
 import Logo from '../components/Logo';
 import RandomProfile from './Profiles/RandomProfiles';
 
@@ -26,12 +26,12 @@ function Home() {
 
   const toggleRegistrationForm = () => {
     setShowRegistration(!showRegistration);
-    setShowLogin(false); // Hide login form when showing registration form
+    setShowLogin(false); 
   };
 
   const toggleLoginForm = () => {
     setShowLogin(!showLogin);
-    setShowRegistration(false); // Hide registration form when showing login form
+    setShowRegistration(false); 
   };
 
   return (

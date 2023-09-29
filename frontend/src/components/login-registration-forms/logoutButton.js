@@ -9,7 +9,6 @@ function HandleLogOut(){
 
 
     const handleLogout = () => {
-        // Clear the user session on logout
         clearSession();
         navigate('/');
       };

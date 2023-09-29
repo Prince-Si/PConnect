@@ -1,13 +1,12 @@
 const express = require('express');
 const SPProfileController = require('../controllers/StuProfessProfile');
-const multer = require('multer'); // Install multer if you haven't already
+const multer = require('multer');
 
 const {storage, eduCertificatesStorage, internCertificatesStorage} = require('../../config/multer');
 
 
 const router = express.Router();
 
-// Create multer instance with the storage configuration
 const upload = multer({ storage: storage });
 const uploadEduCertificate = multer({storage: eduCertificatesStorage});
 const uploadInternCertificate = multer({storage: internCertificatesStorage});

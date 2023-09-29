@@ -36,7 +36,7 @@ const RandomProfile = () => {
         >
           <p>Name: {profile.firstName} {profile.middleName} {profile.lastName}</p>
           <p>Email: {profile.email}</p>
-          {/* Add more fields */}
+         
         </div>
       ))}
 

@@ -1,15 +1,12 @@
-/* Navbar.module.css */
 
-/* Navigation bar container */
 .nav1 {
-  background: linear-gradient(to right, #ff5733, #6f0000); /* Gradient background */
+  background: linear-gradient(to right, #ff5733, #6f0000);
   padding: 10px 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2),
-              0px 2px 10px rgba(0, 0, 0, 0.1); /* Gradient box shadow */
+              0px 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 
-/* Navigation list container */
 .ul1 {
   list-style: none;
   padding: 0;
@@ -17,23 +14,19 @@
   justify-content: center;
 }
 
-/* List item */
 .li1 {
   margin: 0 20px;
 }
 
-/* Link styles */
 .a1 {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
-
-/* Link hover styles */
 .a1:hover {
-  color: #ff5722; /* Change link text color on hover */
-  background-color: #222; /* Change background color on hover */
-  border-radius: 5px; /* Add rounded corners on hover */
-  padding: 5px 10px; /* Adjust padding on hover */
+  color: #ff5722; 
+  background-color: #222; 
+  border-radius: 5px; 
+  padding: 5px 10px; 
 }

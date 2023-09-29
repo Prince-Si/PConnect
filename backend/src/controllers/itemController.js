@@ -1,7 +1,6 @@
 // controllers/itemController.js
 const Item = require('../models/item');
 
-// Create a new item
 exports.createItem = async (req, res) => {
   try {
     const newItem = new Item({ name: req.body.name });
@@ -12,7 +11,6 @@ exports.createItem = async (req, res) => {
   }
 };
 
-// Get all items
 exports.getItems = async (req, res) => {
   try {
     const items = await Item.find({});

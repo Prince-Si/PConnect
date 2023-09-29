@@ -36,7 +36,6 @@ exports.register = (req, res) => {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
-  // Check if the email already exists in the database
   db.query('SELECT * FROM accounts WHERE email = ?', [email], (err, existingUsers) => {
     if (err) {
       console.error('Registration error:', err);
@@ -47,7 +46,6 @@ exports.register = (req, res) => {
       return res.status(409).json({ error: 'Email already registered' });
     }
 
-    // Insert new user into the database
     db.query(
       'INSERT INTO accounts (username, email, password, mobile_no, usertype) VALUES (?, ?, ?, ?, ?)',
       [username, email, password, mobile_no, usertype],
